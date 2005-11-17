@@ -6,21 +6,24 @@
 %define		pdir	Net
 %define		pnam	CUPS
 Summary:	CUPS C API Interface
+Summary(pl):	Interfejs do API C CUPS-a
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.37
 Release:	0.1
-License:	same as Perl	
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b9c77ac7c9cac195130a8a378691c51b
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 CUPS C API Interface.
+
+%description -l pl
+Interfejs do API C CUPS-a.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -47,13 +50,18 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README TODO
 %{perl_vendorarch}/Net/CUPS.pm
+%dir %{perl_vendorarch}/Net/CUPS
 %{perl_vendorarch}/Net/CUPS/Network.pm
 %{perl_vendorarch}/Net/CUPS/PPD.pm
 %{perl_vendorarch}/Net/CUPS/Printer.pm
+%dir %{perl_vendorarch}/auto/Net/CUPS
+%dir %{perl_vendorarch}/auto/Net/CUPS/Network
 %{perl_vendorarch}/auto/Net/CUPS/Network/Network.bs
-%{perl_vendorarch}/auto/Net/CUPS/Network/Network.so
+%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/Network/Network.so
+%dir %{perl_vendorarch}/auto/Net/CUPS/PPD
 %{perl_vendorarch}/auto/Net/CUPS/PPD/PPD.bs
-%{perl_vendorarch}/auto/Net/CUPS/PPD/PPD.so
+%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/PPD/PPD.so
+%dir %{perl_vendorarch}/auto/Net/CUPS/Printer
 %{perl_vendorarch}/auto/Net/CUPS/Printer/Printer.bs
-%{perl_vendorarch}/auto/Net/CUPS/Printer/Printer.so
+%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/Printer/Printer.so
 %{_mandir}/man3/*
