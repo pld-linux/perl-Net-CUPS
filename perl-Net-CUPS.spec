@@ -6,7 +6,7 @@
 %define		pdir	Net
 %define		pnam	CUPS
 Summary:	CUPS C API Interface
-Summary(pl):	Interfejs do API C CUPS-a
+Summary(pl.UTF-8):   Interfejs do API C CUPS-a
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.37
 Release:	0.1
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 CUPS C API Interface.
 
-%description -l pl
+%description -l pl.UTF-8
 Interfejs do API C CUPS-a.
 
 %prep
