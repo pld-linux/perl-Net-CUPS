@@ -6,7 +6,7 @@
 %define		pdir	Net
 %define		pnam	CUPS
 Summary:	CUPS C API Interface
-Summary(pl.UTF-8):   Interfejs do API C CUPS-a
+Summary(pl.UTF-8):	Interfejs do API C CUPS-a
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.37
 Release:	0.1
