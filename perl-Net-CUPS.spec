@@ -7,14 +7,15 @@
 %define		pnam	CUPS
 Summary:	CUPS C API Interface
 Summary(pl.UTF-8):	Interfejs do API C CUPS-a
-Name:		perl-%{pdir}-%{pnam}
+Name:		perl-Net-CUPS
 Version:	0.37
 Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Net/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b9c77ac7c9cac195130a8a378691c51b
+URL:		http://search.cpan.org/dist/Net-CUPS/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
