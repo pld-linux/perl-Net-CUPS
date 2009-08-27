@@ -8,13 +8,12 @@
 Summary:	CUPS C API Interface
 Summary(pl.UTF-8):	Interfejs do API C CUPS-a
 Name:		perl-Net-CUPS
-Version:	0.37
-Release:	0.1
-# same as perl
+Version:	0.61
+Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b9c77ac7c9cac195130a8a378691c51b
+# Source0-md5:	1aba74db9bcf15396005091f826b50e8
 URL:		http://search.cpan.org/dist/Net-CUPS/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -53,17 +52,15 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README TODO
 %{perl_vendorarch}/Net/CUPS.pm
 %dir %{perl_vendorarch}/Net/CUPS
-%{perl_vendorarch}/Net/CUPS/Network.pm
-%{perl_vendorarch}/Net/CUPS/PPD.pm
-%{perl_vendorarch}/Net/CUPS/Printer.pm
+%{perl_vendorarch}/Net/CUPS/*.pm
 %dir %{perl_vendorarch}/auto/Net/CUPS
-%dir %{perl_vendorarch}/auto/Net/CUPS/Network
-%{perl_vendorarch}/auto/Net/CUPS/Network/Network.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/Network/Network.so
+%{perl_vendorarch}/auto/Net/CUPS/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/CUPS.so
+%{perl_vendorarch}/auto/Net/CUPS/autosplit.ix
+%dir %{perl_vendorarch}/auto/Net/CUPS/Destination
+%{perl_vendorarch}/auto/Net/CUPS/Destination/autosplit.ix
+%dir %{perl_vendorarch}/auto/Net/CUPS/IPP
+%{perl_vendorarch}/auto/Net/CUPS/IPP/autosplit.ix
 %dir %{perl_vendorarch}/auto/Net/CUPS/PPD
-%{perl_vendorarch}/auto/Net/CUPS/PPD/PPD.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/PPD/PPD.so
-%dir %{perl_vendorarch}/auto/Net/CUPS/Printer
-%{perl_vendorarch}/auto/Net/CUPS/Printer/Printer.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/Printer/Printer.so
+%{perl_vendorarch}/auto/Net/CUPS/PPD/autosplit.ix
 %{_mandir}/man3/*
