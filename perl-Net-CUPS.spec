@@ -54,7 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Net/CUPS
 %{perl_vendorarch}/Net/CUPS/*.pm
 %dir %{perl_vendorarch}/auto/Net/CUPS
-%{perl_vendorarch}/auto/Net/CUPS/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Net/CUPS/CUPS.so
 %{perl_vendorarch}/auto/Net/CUPS/autosplit.ix
 %dir %{perl_vendorarch}/auto/Net/CUPS/Destination
